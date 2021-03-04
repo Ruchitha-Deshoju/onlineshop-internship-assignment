@@ -1,0 +1,18 @@
+
+<div class="lds-default" *ngIf="isLoader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+<div class="container" *ngIf="!isLoader">
+    <div class="row">
+        <div class="col-md-5">
+            <img [src]="product.image" [alt]="product.title">
+        </div>
+        <div class="col-md-7">
+            <h1>{{ product.title | slice:0:20 }}</h1>
+            <h3>{{ product.description }}</h3>
+            <h2>${{ product.price }}</h2>
+            <button type="button" class="addCart btn btn-light" (click)="sendTocart(product.id)">Add to cart</button>
+        </div>
+    </div>
+</div>
+
+

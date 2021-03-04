@@ -1,0 +1,25 @@
+
+<div class="container" >
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product</th>
+            <th scope="col">price</th>
+            <th scope="col">remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of products; let i=index" >
+            <td scope="row">{{i+1}}</td>
+            <td>{{ prod.title | slice:0:20}}</td>
+            <td>{{prod.price}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteProduct(prod.id, prod.price)"><i class="far fa-trash-alt"></i></button></td>
+          </tr>
+          <tr><td></td><th>Total:</th><th>{{total_cost.toFixed(2)}}</th><td></td></tr>
+        </tbody>
+      </table>
+
+      <button type="button" class="addCart btn btn-light" [routerLink]="['/']">Shop More</button>
+
+</div>
